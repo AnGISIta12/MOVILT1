@@ -105,13 +105,13 @@ fun Piloto(navController: NavController, driverNumber: Int) {
 }
 private fun hexToColor(hexString: String?): Color {
     if (hexString == null) {
-        return Color.Gray
+        return Color.DarkGray
     }
     val validatedHexString = if (hexString.startsWith("#")) hexString else "#$hexString"
     return try {
         Color(android.graphics.Color.parseColor(validatedHexString))
     } catch (e: IllegalArgumentException) {
         e.printStackTrace()
-        Color.Gray //POR DEFAULT
+        Color.DarkGray //POR DEFAULT
     }
 }
