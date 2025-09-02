@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun HomeScreen(navController: NavController) {
     Column(
-        modifier = Modifier
+        modifier = Modifier // Para que ocupe toda la pantalla
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -49,9 +49,9 @@ fun HomeScreen(navController: NavController) {
             verticalArrangement = Arrangement.Center
         ) {
             Image(
-                painter = painterResource(id = R.drawable.triqui),
-                contentDescription = "Juego de triqui",
-                contentScale = ContentScale.Fit,
+                painter = painterResource(id = R.drawable.triqui), //siempre poner un id para adjuntar imagenes
+                contentDescription = "Juego de triqui", //el profe dijoq que siempre poner descripcion de la imagen
+                contentScale = ContentScale.Fit, //para que se ajuste a la pantalla que eligamos
                 modifier = Modifier
                     .weight(1f) // La imagen toma el espacio
                     .fillMaxWidth()
@@ -84,9 +84,9 @@ fun HomeScreen(navController: NavController) {
         }
     }
 }
-@Preview(showBackground = true)
+@Preview(showBackground = true) // Para ver la pantalla en modo previa
 @Composable
 fun HomePreview() {
-    val navController = rememberNavController()
+    val navController = rememberNavController() // Para navegar entre pantallas
     HomeScreen(navController)
 }
