@@ -62,7 +62,7 @@ fun PilotoD(driver: Driver, navController: NavController) {
         "Liam LAWSON" to "NZ", "Oliver BEARMAN" to "GB", "Nico HULKENBERG" to "DE", "Max VERSTAPPEN" to "DE"
     )
     val countryCode = countryMap[driver.full_name] ?: "UN" // por si no esta la bandera
-    val banderaUrl = "https://flagsapi.com/$countryCode/flat/64.png"
+    val banderaUrl = "https://flagsapi.com/$countryCode/flat/64.png" // URL de la bandera
     Card(
         modifier = Modifier
             .fillMaxWidth()

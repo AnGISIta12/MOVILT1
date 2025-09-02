@@ -21,7 +21,7 @@ fun Piloto(navController: NavController, driverNumber: Int) {
     val scope = rememberCoroutineScope()
     var driver by remember { mutableStateOf<Driver?>(null) }
     var carga by remember { mutableStateOf(true) }
-    val countryMap = mapOf(
+    val countryMap = mapOf( // Mapa de pilotos a países para conectar con la api de banderas
         "Lando NORRIS" to "GB", "Oscar PIASTRI" to "AU",
         "Lewis HAMILTON" to "GB", "George RUSSELL" to "GB", "Charles LECLERC" to "MC",
         "Carlos SAINZ" to "ES", "Fernando ALONSO" to "ES", "Lance STROLL" to "CA",
@@ -51,7 +51,7 @@ fun Piloto(navController: NavController, driverNumber: Int) {
             Text("Piloto no encontrado en la lista")
         }
     } else {
-        val driverValue = driver!!
+        val driverValue = driver!! // para saber que driver no es nulo
         val countryCode = countryMap[driverValue.full_name] ?: "UN" // "UN" como fallback para país desconocido
         val banderaUrl = "https://flagsapi.com/$countryCode/flat/64.png"
         val teamColor = driverValue.team_colour?.let { colorHex -> hexToColor(colorHex)
@@ -103,11 +103,11 @@ fun Piloto(navController: NavController, driverNumber: Int) {
         }
     }
 }
-private fun hexToColor(hexString: String?): Color {
+private fun hexToColor(hexString: String?): Color { // Función para convertir el color del equipo
     if (hexString == null) {
-        return Color.DarkGray
+        return Color.DarkGray //POR DEFAULT
     }
-    val validatedHexString = if (hexString.startsWith("#")) hexString else "#$hexString"
+    val validatedHexString = if (hexString.startsWith("#")) hexString else "#$hexString" // Validar el formato
     return try {
         Color(android.graphics.Color.parseColor(validatedHexString))
     } catch (e: IllegalArgumentException) {
