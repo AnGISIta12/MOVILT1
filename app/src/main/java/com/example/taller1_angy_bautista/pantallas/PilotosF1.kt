@@ -59,7 +59,7 @@ fun PilotoD(driver: Driver, navController: NavController) {
         "Charles LECLERC" to "MC", "Carlos SAINZ" to "ES", "Fernando ALONSO" to "ES", "Lance STROLL" to "CA",
         "Pierre GASLY" to "FR", "Esteban OCON" to "FR", "Yuki TSUNODA" to "JP", "Guanyu ZHOU" to "CN",
         "Gabriel BORTOLETO" to "BR", "Isack HADJAR" to "FR", "Jack DOOHAN" to "AU", "Andrea Kimi ANTONELLI" to "IT",
-        "Liam LAWSON" to "NZ", "Oliver BEARMAN" to "GB"
+        "Liam LAWSON" to "NZ", "Oliver BEARMAN" to "GB", "Nico HULKENBERG" to "DE", "Max VERSTAPPEN" to "DE"
     )
     val countryCode = countryMap[driver.full_name] ?: "UN" // por si no esta la bandera
     val banderaUrl = "https://flagsapi.com/$countryCode/flat/64.png"
