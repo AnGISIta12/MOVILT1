@@ -68,7 +68,7 @@ fun verificarGanador(tablero: List<String>): List<Int>? {
     )
     for (linea in lineas) { //Recorre las lineas
         val (a, b, c) = linea //Desestructura la linea
-        if (tablero[a].isNotEmpty() && tablero[a] == tablero[b] && tablero[b] == tablero[c]) { //Verifica si hay ganador
+        if (tablero[a].isNotEmpty() && tablero[a] == tablero[b] && tablero[b] == tablero[c]) { //Verifica si hay ganador con las lineas a y b y c
             return linea //Si hay ganador, retorna la linea
         }
     }
