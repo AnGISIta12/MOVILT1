@@ -109,8 +109,8 @@ private fun hexToColor(hexString: String?): Color { // Función para convertir e
     }
     val validatedHexString = if (hexString.startsWith("#")) hexString else "#$hexString" // Validar el formato
     return try {
-        Color(android.graphics.Color.parseColor(validatedHexString))
-    } catch (e: IllegalArgumentException) {
+        Color(android.graphics.Color.parseColor(validatedHexString)) // Convertir el color con el formato correcto
+    } catch (e: IllegalArgumentException) { // Manejar excepciones
         e.printStackTrace()
         Color.DarkGray //POR DEFAULT
     }
